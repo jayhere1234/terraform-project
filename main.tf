@@ -22,25 +22,6 @@ EOF
   }
 }
 
-resource "aws_instance" "yy" {
-  ami             = "ami-06aa3f7caf3a30282"
-  instance_type   = "t2.micro"
-  key_name        = "sad"
-  vpc_security_group_ids = [aws_security_group.jj.id]
-  availability_zone = "us-east-1b"
-  user_data       = <<EOF
-#!/bin/bash
-sudo -i
-apt install httpd -y
-systemctl start httpd
-chkconfig httpd on
-echo "hai all this is my website created by terraform infrastructurte by raham sir server-2" > /var/www/html/index.html
-EOF
-  tags = {
-    Name = "web-server-2"
-  }
-}
-
 resource "aws_instance" "xy" {
   ami             = "ami-06aa3f7caf3a30282"
   instance_type   = "t2.micro"
@@ -49,17 +30,6 @@ resource "aws_instance" "xy" {
   availability_zone = "us-east-1a"
   tags = {
     Name = "app-server-1"
-  }
-}
-
-resource "aws_instance" "zz" {
-  ami             = "ami-06aa3f7caf3a30282"
-  instance_type   = "t2.micro"
-  key_name        = "sad"
-  vpc_security_group_ids = [aws_security_group.jj.id]
-  availability_zone = "us-east-1b"
-  tags = {
-    Name = "app-server-2"
   }
 }
 
