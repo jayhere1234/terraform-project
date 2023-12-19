@@ -25,6 +25,7 @@ EOF
 resource "aws_instance" "yy" {
   ami             = "ami-06aa3f7caf3a30282"
   key_name        = "sad"
+  instance_type   = "t2.micro"
   vpc_security_group_ids = [aws_security_group.jj.id]
   availability_zone = "us-east-1b"
   user_data       = <<EOF
