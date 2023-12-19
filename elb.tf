@@ -1,4 +1,4 @@
-resource "aws_elb" "bar" {
+resource "aws_elb" "rr" {
   name               = "jay-terraform-elb"
   availability_zones = ["us-east-1a", "us-east-1b"]
 
@@ -17,11 +17,11 @@ resource "aws_elb" "bar" {
     interval            = 30
   }
 
-  instances                 = ["${aws_instance.one.id}", "${aws_instance.two.id}"]
+  instances                 = ["${aws_instance.xx.id}", "${aws_instance.yy.id}"]
   cross_zone_load_balancing = true
   idle_timeout              = 400
   tags = {
-    Name = "raham-tf-elb"
+    Name = "raga-tf-elb"
   }
 }
 
