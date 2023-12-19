@@ -3,7 +3,7 @@ provider "aws" {
 region = "us-east-1"
 }
 
-resource "aws_instance" "one" {
+resource "aws_instance" "xx" {
   ami             = "ami-06aa3f7caf3a30282"
   instance_type   = "t2.micro"
   key_name        = "sad"
@@ -22,7 +22,7 @@ EOF
   }
 }
 
-resource "aws_instance" "two" {
+resource "aws_instance" "yy" {
   ami             = "ami-06aa3f7caf3a30282"
   key_name        = "sad"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -40,7 +40,7 @@ EOF
   }
 }
 
-resource "aws_instance" "three" {
+resource "aws_instance" "xy" {
   ami             = "ami-06aa3f7caf3a30282"
   instance_type   = "t2.micro"
   key_name        = "sad"
@@ -51,7 +51,7 @@ resource "aws_instance" "three" {
   }
 }
 
-resource "aws_instance" "four" {
+resource "aws_instance" "zz" {
   ami             = "ami-06aa3f7caf3a30282"
   instance_type   = "t2.micro"
   key_name        = "sad"
@@ -62,7 +62,7 @@ resource "aws_instance" "four" {
   }
 }
 
-resource "aws_security_group" "five" {
+resource "aws_security_group" "jj" {
   name = "elb-sg"
   ingress {
     from_port   = 22
@@ -86,11 +86,11 @@ resource "aws_security_group" "five" {
   }
 }
 
-resource "aws_s3_bucket" "six" {
+resource "aws_s3_bucket" "kk" {
   bucket = "devopsb9"
 }
 
-resource "aws_iam_user" "seven" {
+resource "aws_iam_user" "ll" {
 for_each = var.user_names
 name = each.value
 }
@@ -101,7 +101,7 @@ type = set(string)
 default = ["user1", "user2", "user3", "user4"]
 }
 
-resource "aws_ebs_volume" "eight" {
+resource "aws_ebs_volume" "aa" {
  availability_zone = "us-east-1a"
   size = 40
   tags = {
