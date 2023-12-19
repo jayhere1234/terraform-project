@@ -1,6 +1,6 @@
 resource "aws_elb" "rr" {
   name               = "jay-terraform-elb"
-  availability_zones = ["us-east-1a", "us-east-1b"]
+  availability_zones = ["us-east-1a"]
 
   listener {
     instance_port     = 80
@@ -17,7 +17,7 @@ resource "aws_elb" "rr" {
     interval            = 30
   }
 
-  instances                 = ["${aws_instance.xx.id}", "${aws_instance.yy.id}"]
+  instances                 = ["${aws_instance.xx.id}"]
   cross_zone_load_balancing = true
   idle_timeout              = 400
   tags = {
