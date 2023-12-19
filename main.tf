@@ -7,6 +7,7 @@ resource "aws_instance" "xx" {
   ami             = "ami-06aa3f7caf3a30282"
   instance_type   = "t2.micro"
   key_name        = "sad"
+  subnet_id       = "subnet-0fb501111b6d99a0b"
   vpc_security_group_ids = [aws_security_group.jj.id]
   availability_zone = "us-east-1a"
   user_data       = <<EOF
@@ -26,6 +27,7 @@ resource "aws_instance" "xy" {
   ami             = "ami-06aa3f7caf3a30282"
   instance_type   = "t2.micro"
   key_name        = "sad"
+  subnet_id       = "subnet-0fb501111b6d99a0b"
   vpc_security_group_ids = [aws_security_group.jj.id]
   availability_zone = "us-east-1a"
   tags = {
